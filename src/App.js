@@ -16,7 +16,7 @@ function BallAndCollisions({ args = [1.2, 32, 32], v = new THREE.Vector3() }) {
   )
   return (
     <>
-      <PerspectiveCamera ref={cam} makeDefault position={[0, 0, 12.5]} fov={55} />
+      <PerspectiveCamera ref={cam} makeDefault position={[0, 0, 12.5]} fov={50} />
       <mesh ref={ref}>
         <sphereGeometry args={args} />
         <meshPhysicalMaterial map={useTexture("/cross.jpg")} transmission={1} roughness={0} thickness={10} envMapIntensity={1} />
@@ -52,15 +52,15 @@ function MovingBlock({ offset = 0, position: [x, y, z], ...props }) {
 }
 
 const Background = (props) => (
-  <mesh scale={useAspect(5000, 3800, 3)} {...props}>
+  <mesh scale={useAspect(10000, 7600, 3)} {...props}>
     <planeGeometry />
     <meshBasicMaterial map={useTexture("/bg.jpg")} />
   </mesh>
 )
 
 export const App = () => (
-  <Canvas dpr={1.5} camera={{ position: [0, 3, 12], fov: 50 }}>
-    <Physics iterations={11} gravity={[0, -30, 0]}>
+  <Canvas dpr={1.5} camera={{ position: [0, 3, 12], fov: 55 }}>
+    <Physics iterations={11} gravity={[0, -10, 0]}>
       <BallAndCollisions />
       <Paddle />
       {Array.from({ length: 6 }, (_, i) => <MovingBlock key={i} position={[0, 1 + i * 4.5, 0]} offset={10000 * i} />) /* prettier-ignore */}
