@@ -16,7 +16,7 @@ function BallAndCollisions({ args = [1.2, 32, 32], v = new THREE.Vector3() }) {
   )
   return (
     <>
-      <PerspectiveCamera ref={cam} makeDefault position={[0, 0, 12]} fov={50} />
+      <PerspectiveCamera ref={cam} makeDefault position={[0, 0, 12.5]} fov={55} />
       <mesh ref={ref}>
         <sphereGeometry args={args} />
         <meshPhysicalMaterial map={useTexture("/cross.jpg")} transmission={1} roughness={0} thickness={10} envMapIntensity={1} />
