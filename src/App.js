@@ -59,7 +59,7 @@ const Background = (props) => (
 )
 
 export const App = () => (
-  <Canvas dpr={1.5} camera={{ position: [0, 2, 12], fov: 50 }}>
+  <Canvas dpr={1.5} camera={{ position: [0, 3, 12], fov: 50 }}>
     <Physics iterations={5} gravity={[0, -30, 0]}>
       <BallAndCollisions />
       <Paddle />
