@@ -60,7 +60,7 @@ const Background = (props) => (
 
 export const App = () => (
   <Canvas dpr={1.5} camera={{ position: [0, 3, 12], fov: 50 }}>
-    <Physics iterations={10} gravity={[0, -30, 0]}>
+    <Physics iterations={11} gravity={[0, -30, 0]}>
       <BallAndCollisions />
       <Paddle />
       {Array.from({ length: 6 }, (_, i) => <MovingBlock key={i} position={[0, 1 + i * 4.5, 0]} offset={10000 * i} />) /* prettier-ignore */}
